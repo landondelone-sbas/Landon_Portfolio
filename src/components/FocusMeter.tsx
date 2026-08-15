@@ -1,16 +1,28 @@
 interface Segment {
   label: string;
   value: number;
-  className: string;
+  barClass: string;
+  dotClass: string;
 }
 
 const SEGMENTS: Segment[] = [
-  { label: "AI Web Development", value: 50, className: "bg-ink text-paper" },
-  { label: "Sports Analytics", value: 25, className: "bg-signal text-paper" },
+  {
+    label: "AI Web Development",
+    value: 50,
+    barClass: "bg-green text-void",
+    dotClass: "bg-green",
+  },
+  {
+    label: "Sports Analytics",
+    value: 25,
+    barClass: "bg-purple text-ink",
+    dotClass: "bg-purple",
+  },
   {
     label: "Entertainment Breakdowns",
     value: 25,
-    className: "bg-paper-dim text-ink",
+    barClass: "bg-pink text-ink",
+    dotClass: "bg-pink",
   },
 ];
 
@@ -22,14 +34,14 @@ export default function FocusMeter() {
       </p>
 
       <div
-        className="flex h-10 w-full overflow-hidden border-4 border-ink"
+        className="flex h-10 w-full overflow-hidden rounded-full border border-line"
         role="img"
         aria-label="Focus split: 50% AI web development, 25% sports analytics, 25% entertainment breakdowns"
       >
         {SEGMENTS.map((seg) => (
           <div
             key={seg.label}
-            className={`flex items-center justify-center border-r-4 border-ink last:border-r-0 ${seg.className}`}
+            className={`flex items-center justify-center ${seg.barClass}`}
             style={{ width: `${seg.value}%` }}
           >
             <span className="font-display text-sm font-bold">
@@ -47,7 +59,7 @@ export default function FocusMeter() {
           >
             <span
               aria-hidden="true"
-              className={`inline-block h-3 w-3 border-2 border-ink ${seg.className.split(" ")[0]}`}
+              className={`inline-block h-3 w-3 rounded-full ${seg.dotClass}`}
             />
             {seg.label}
           </li>

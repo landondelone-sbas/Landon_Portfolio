@@ -2,6 +2,13 @@ import { useEffect, useRef } from "react";
 import type { Project } from "../data/projects";
 import { categoryMeta } from "../data/projects";
 
+const ACCENT: Record<Project["category"], { badge: string; ring: string }> = {
+  webdev: { badge: "border-green/60 text-green", ring: "glow-green" },
+  sports: { badge: "border-purple/60 text-purple", ring: "glow-purple" },
+  entertainment: { badge: "border-pink/60 text-pink", ring: "glow-pink" },
+  aiart: { badge: "border-green/60 text-green", ring: "glow-green" },
+};
+
 interface Props {
   project: Project;
   onClose: () => void;
@@ -50,10 +57,11 @@ export default function ProjectModal({ project, onClose }: Props) {
   }, [onClose]);
 
   const meta = categoryMeta[project.category];
+  const accent = ACCENT[project.category];
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/70 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-void/80 p-4 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
@@ -62,10 +70,12 @@ export default function ProjectModal({ project, onClose }: Props) {
         aria-modal="true"
         aria-labelledby="modal-title"
         onClick={(e) => e.stopPropagation()}
-        className="max-h-[85vh] w-full max-w-2xl overflow-y-auto border-4 border-ink bg-paper"
+        className={`max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-line bg-panel ${accent.ring}`}
       >
-        <div className="flex items-center justify-between border-b-4 border-ink px-6 py-4">
-          <span className="border-2 border-ink px-2 py-0.5 font-display text-xs font-bold uppercase tracking-widest">
+        <div className="flex items-center justify-between border-b border-line px-6 py-4">
+          <span
+            className={`rounded-full border px-2 py-0.5 font-display text-xs font-bold uppercase tracking-widest ${accent.badge}`}
+          >
             {meta.short}
           </span>
           <button
@@ -73,21 +83,21 @@ export default function ProjectModal({ project, onClose }: Props) {
             type="button"
             onClick={onClose}
             aria-label="Close dialog"
-            className="border-2 border-ink px-3 py-1 font-display text-sm font-semibold uppercase tracking-widest transition-colors hover:bg-ink hover:text-paper"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-pink hover:text-pink"
           >
-            Close ✕
+            ✕
           </button>
         </div>
 
         <div className="p-6 sm:p-8">
           <h2
             id="modal-title"
-            className="text-balance font-display text-3xl font-bold uppercase leading-tight"
+            className="text-balance font-display text-3xl font-bold text-ink"
           >
             {project.title}
           </h2>
 
-          <div className="mt-4 flex h-48 items-center justify-center border-4 border-ink bg-paper-dim">
+          <div className="mt-4 flex h-48 items-center justify-center rounded-2xl border border-line bg-panel-2">
             <span className="font-display text-sm font-semibold uppercase tracking-widest text-mute">
               {project.format} preview placeholder
             </span>
@@ -101,7 +111,7 @@ export default function ProjectModal({ project, onClose }: Props) {
             {project.tags.map((tag) => (
               <li
                 key={tag}
-                className="border-2 border-ink px-3 py-1 font-body text-sm"
+                className="rounded-full border border-line px-3 py-1 font-body text-sm text-ink"
               >
                 {tag}
               </li>

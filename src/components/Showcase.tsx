@@ -27,14 +27,14 @@ export default function Showcase() {
   );
 
   return (
-    <section id="showcase" className="border-b-4 border-ink px-4 py-16 sm:px-6">
+    <section id="showcase" className="border-b border-line px-4 py-16 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-signal">
+            <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-pink">
               Showcase
             </p>
-            <h2 className="font-display text-4xl font-bold uppercase tracking-tight sm:text-5xl">
+            <h2 className="font-display text-4xl font-bold uppercase tracking-tight text-ink sm:text-5xl">
               Selected Work
             </h2>
             <p className="mt-2 max-w-xl font-body text-mute">
@@ -56,10 +56,10 @@ export default function Showcase() {
                   type="button"
                   onClick={() => setFilter(f.id)}
                   aria-pressed={isActive}
-                  className={`border-2 border-ink px-4 py-2 font-display text-sm font-semibold uppercase tracking-widest transition-colors ${
+                  className={`rounded-full border px-4 py-2 font-display text-sm font-semibold uppercase tracking-widest transition-colors ${
                     isActive
-                      ? "bg-ink text-paper"
-                      : "bg-paper text-ink hover:bg-paper-dim"
+                      ? "border-green bg-green text-void"
+                      : "border-line text-mute hover:border-green hover:text-green"
                   }`}
                 >
                   {f.label}

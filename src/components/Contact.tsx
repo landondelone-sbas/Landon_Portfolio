@@ -26,10 +26,10 @@ export default function Contact() {
     <section id="contact" className="px-4 py-16 sm:px-6">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
         <div>
-          <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-signal">
+          <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-pink">
             Contact
           </p>
-          <h2 className="font-display text-4xl font-bold uppercase tracking-tight sm:text-5xl">
+          <h2 className="font-display text-4xl font-bold uppercase tracking-tight text-ink sm:text-5xl">
             Let's Talk
           </h2>
           <p className="mt-4 max-w-prose text-pretty font-body text-lg leading-relaxed text-mute">
@@ -41,7 +41,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="name"
-                className="mb-1 block font-display text-xs font-semibold uppercase tracking-widest"
+                className="mb-1 block font-display text-xs font-semibold uppercase tracking-widest text-ink"
               >
                 Name
               </label>
@@ -52,14 +52,14 @@ export default function Contact() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full border-2 border-ink bg-paper px-3 py-2 font-body focus:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                className="w-full rounded-xl border border-line bg-panel px-3 py-2 font-body text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-green"
               />
             </div>
 
             <div>
               <label
                 htmlFor="email"
-                className="mb-1 block font-display text-xs font-semibold uppercase tracking-widest"
+                className="mb-1 block font-display text-xs font-semibold uppercase tracking-widest text-ink"
               >
                 Email
               </label>
@@ -70,14 +70,14 @@ export default function Contact() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border-2 border-ink bg-paper px-3 py-2 font-body focus:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                className="w-full rounded-xl border border-line bg-panel px-3 py-2 font-body text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-green"
               />
             </div>
 
             <div>
               <label
                 htmlFor="message"
-                className="mb-1 block font-display text-xs font-semibold uppercase tracking-widest"
+                className="mb-1 block font-display text-xs font-semibold uppercase tracking-widest text-ink"
               >
                 Message
               </label>
@@ -88,31 +88,31 @@ export default function Contact() {
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full border-2 border-ink bg-paper px-3 py-2 font-body focus:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                className="w-full rounded-xl border border-line bg-panel px-3 py-2 font-body text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-green"
               />
             </div>
 
             <button
               type="submit"
-              className="border-2 border-ink bg-ink px-6 py-3 font-display text-sm font-semibold uppercase tracking-widest text-paper transition-colors hover:bg-signal hover:border-signal"
+              className="glow-green rounded-full bg-green px-7 py-3.5 font-display text-sm font-bold uppercase tracking-widest text-void transition-transform hover:scale-105"
             >
               Send Message
             </button>
           </form>
         </div>
 
-        <div className="border-4 border-ink p-6">
-          <h3 className="font-display text-sm font-semibold uppercase tracking-widest">
+        <div className="rounded-3xl border border-line bg-panel p-6">
+          <h3 className="font-display text-sm font-semibold uppercase tracking-widest text-purple">
             Direct
           </h3>
           <a
             href={`mailto:${EMAIL}`}
-            className="mt-2 inline-block break-all font-body text-lg underline decoration-2 underline-offset-2 hover:text-signal"
+            className="mt-2 inline-block break-all font-body text-lg text-ink underline decoration-2 underline-offset-2 hover:text-green"
           >
             {EMAIL}
           </a>
 
-          <h3 className="mt-8 font-display text-sm font-semibold uppercase tracking-widest">
+          <h3 className="mt-8 font-display text-sm font-semibold uppercase tracking-widest text-purple">
             Elsewhere
           </h3>
           <ul className="mt-2 space-y-2">
@@ -120,7 +120,7 @@ export default function Contact() {
               <li key={s.label}>
                 <a
                   href={s.href}
-                  className="inline-block font-body text-lg underline decoration-2 underline-offset-2 hover:text-signal"
+                  className="inline-block font-body text-lg text-ink underline decoration-2 underline-offset-2 hover:text-green"
                 >
                   {s.label}
                 </a>
