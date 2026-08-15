@@ -1,0 +1,88 @@
+import { useMemo, useState } from "react";
+import type { Category, Project } from "../data/projects";
+import { categoryMeta, projects } from "../data/projects";
+import ProjectCard from "./ProjectCard";
+import ProjectModal from "./ProjectModal";
+
+type Filter = Category | "all";
+
+const FILTERS: { id: Filter; label: string }[] = [
+  { id: "all", label: "All" },
+  { id: "webdev", label: categoryMeta.webdev.short },
+  { id: "sports", label: categoryMeta.sports.short },
+  { id: "entertainment", label: categoryMeta.entertainment.short },
+  { id: "aiart", label: categoryMeta.aiart.short },
+];
+
+export default function Showcase() {
+  const [filter, setFilter] = useState<Filter>("all");
+  const [active, setActive] = useState<Project | null>(null);
+
+  const visible = useMemo(
+    () =>
+      filter === "all"
+        ? projects
+        : projects.filter((p) => p.category === filter),
+    [filter],
+  );
+
+  return (
+    <section id="showcase" className="border-b-4 border-ink px-4 py-16 sm:px-6">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-signal">
+              Showcase
+            </p>
+            <h2 className="font-display text-4xl font-bold uppercase tracking-tight sm:text-5xl">
+              Selected Work
+            </h2>
+            <p className="mt-2 max-w-xl font-body text-mute">
+              Placeholder entries — swap in real projects, videos, and
+              breakdowns as they go live.
+            </p>
+          </div>
+
+          <div
+            className="flex flex-wrap gap-2"
+            role="group"
+            aria-label="Filter by category"
+          >
+            {FILTERS.map((f) => {
+              const isActive = filter === f.id;
+              return (
+                <button
+                  key={f.id}
+                  type="button"
+                  onClick={() => setFilter(f.id)}
+                  aria-pressed={isActive}
+                  className={`border-2 border-ink px-4 py-2 font-display text-sm font-semibold uppercase tracking-widest transition-colors ${
+                    isActive
+                      ? "bg-ink text-paper"
+                      : "bg-paper text-ink hover:bg-paper-dim"
+                  }`}
+                >
+                  {f.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="columns-1 gap-6 sm:columns-2 lg:columns-3">
+          {visible.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onOpen={setActive}
+            />
+          ))}
+        </div>
+      </div>
+
+      {active && (
+        <ProjectModal project={active} onClose={() => setActive(null)} />
+      )}
+    </section>
+  );
+}
