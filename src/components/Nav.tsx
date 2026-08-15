@@ -14,7 +14,7 @@ export default function Nav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <a
           href="#top"
-          className="font-display text-xl font-bold uppercase tracking-tight text-ink"
+          className="font-signature text-2xl text-ink"
         >
           Landon<span className="text-green">.</span>
         </a>

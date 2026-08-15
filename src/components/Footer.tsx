@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
             <div>
-              <p className="font-display text-xl font-bold uppercase tracking-tight text-ink">
+              <p className="font-signature text-2xl text-ink">
                 Landon<span className="text-green">.</span>
               </p>
               <p className="mt-1 font-body text-sm text-mute">
