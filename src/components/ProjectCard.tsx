@@ -1,6 +1,7 @@
 import type { Project } from "../data/projects";
 import { categoryMeta } from "../data/projects";
 import { getYouTubeId, getYouTubeThumbnail } from "../lib/youtube";
+import { withBase } from "../lib/assets";
 
 const ACCENT: Record<
   Project["category"],
@@ -41,7 +42,11 @@ export default function ProjectCard({ project, onOpen }: Props) {
   const meta = categoryMeta[project.category];
   const accent = ACCENT[project.category];
   const youtubeId = project.url ? getYouTubeId(project.url) : null;
-  const thumbnailSrc = youtubeId ? getYouTubeThumbnail(youtubeId) : project.image;
+  const thumbnailSrc = youtubeId
+    ? getYouTubeThumbnail(youtubeId)
+    : project.image
+      ? withBase(project.image)
+      : undefined;
 
   return (
     <article className="mb-6 break-inside-avoid">

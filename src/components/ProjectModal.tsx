@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import type { Project } from "../data/projects";
 import { categoryMeta } from "../data/projects";
 import { getYouTubeEmbedUrl, getYouTubeId } from "../lib/youtube";
+import { withBase } from "../lib/assets";
 
 const ACCENT: Record<Project["category"], { badge: string; ring: string }> = {
   webdev: { badge: "border-green/60 text-green", ring: "glow-green" },
@@ -113,7 +114,7 @@ export default function ProjectModal({ project, onClose }: Props) {
           ) : project.image ? (
             <div className="mt-4 overflow-hidden rounded-2xl border border-line bg-panel-2">
               <img
-                src={project.image}
+                src={withBase(project.image)}
                 alt=""
                 loading="lazy"
                 className="w-full object-cover"

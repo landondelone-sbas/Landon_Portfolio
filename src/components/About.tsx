@@ -1,3 +1,5 @@
+import { withBase } from "../lib/assets";
+
 const SKILLS = [
   "React / TypeScript",
   "AI-assisted development",
@@ -52,7 +54,7 @@ export default function About() {
 
         <div className="overflow-hidden rounded-3xl border border-line bg-panel">
           <img
-            src="/images/landon-portrait.jpg"
+            src={withBase("/images/landon-portrait.jpg")}
             alt="AI-generated portrait of Landon DeLone as an Imperial officer"
             loading="lazy"
             className="h-full w-full object-cover"
