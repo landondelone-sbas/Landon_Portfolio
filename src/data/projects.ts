@@ -23,24 +23,38 @@ export const categoryMeta: Record<
 
 export const projects: Project[] = [
   {
-    id: "proj-1",
+    id: "webdev-tetris",
     category: "webdev",
     format: "Project",
-    title: "Placeholder: Client AI Ops Site",
-    summary: "AI-assisted consulting site with automated content pipeline.",
+    title: "Tetris",
+    summary:
+      "A web-based build of the classic Tetris, playable with keyboard or touch.",
     detail:
-      "Replace with a real case study: the problem, your stack, the build process, and the measurable outcome. Swap this block for a live link and screenshots.",
-    tags: ["React", "AI Integration", "Design"],
+      "Full falling-block puzzle mechanics — hold piece, hard drop, level progression, and score tracking — built for both keyboard and touch input.",
+    tags: ["JavaScript", "Game Dev"],
+    url: "https://landondelone-sbas.github.io/Tetris/",
   },
   {
-    id: "proj-2",
+    id: "webdev-server-tracker",
+    category: "webdev",
+    format: "Dashboard",
+    title: "Server Tracker",
+    summary: "A dashboard for logging and reviewing server shifts.",
+    detail:
+      "Shift-management dashboard with an overview view, a form for adding new shifts, historical data, generated reports, and a settings panel — built for tracking server work over time.",
+    tags: ["Dashboard", "Shift Tracking"],
+    url: "https://landondelone-sbas.github.io/server_tracker/",
+  },
+  {
+    id: "webdev-whiteboard",
     category: "webdev",
     format: "Project",
-    title: "Placeholder: Internal Tooling Dashboard",
-    summary: "Data-driven dashboard built with an LLM-assisted workflow.",
+    title: "Whiteboard",
+    summary: "A browser-based drawing app with a full basic toolset.",
     detail:
-      "Drop in a project description here — what you built, why it mattered, and a link to the repo or a live demo.",
-    tags: ["TypeScript", "Automation"],
+      "Canvas drawing app with pen, eraser, rectangle, circle, and text tools, adjustable color and brush size, a clear-board action, and PNG export.",
+    tags: ["Canvas API", "Drawing Tool"],
+    url: "https://landondelone-sbas.github.io/WhiteboardApp/",
   },
   {
     id: "sports-dvoa",
@@ -79,24 +93,28 @@ export const projects: Project[] = [
     url: "https://youtu.be/zZH6KjN4eWo",
   },
   {
-    id: "proj-5",
+    id: "entertainment-hotd-finale",
     category: "entertainment",
     format: "Video",
-    title: "Placeholder: Lore Deep-Dive",
-    summary: "Video breakdown mapping a franchise's timeline and lore.",
+    title:
+      "Ulf's Ultimate Betrayal & Aegon's Return! | House of the Dragon Season Three Finale",
+    summary:
+      "A timeline-mapping breakdown of the House of the Dragon season three finale — Ulf's betrayal and Aegon's return.",
     detail:
-      "Embed your actual YouTube video here once it's live — this is a placeholder slot for the thumbnail and description.",
-    tags: ["YouTube", "Lore Mapping"],
+      "Part of the Where in the Timeline!? The Stark Side series, tracking House of the Dragon's story beats against the wider timeline as the season three finale plays out.",
+    tags: ["YouTube", "House of the Dragon", "Lore"],
+    url: "https://youtu.be/UaDwlPllsGM",
   },
   {
-    id: "proj-6",
+    id: "entertainment-andor-s2",
     category: "entertainment",
-    format: "Breakdown",
-    title: "Placeholder: Media Theory Breakdown",
-    summary: "Written or video analysis of a show, film, or series.",
+    format: "Video",
+    title: "We gotta talk about the 2nd season of Andor!",
+    summary: "A breakdown of Andor season two and where it lands in the Star Wars timeline.",
     detail:
-      "Replace with a real breakdown — link the video, embed the script excerpt, or summarize the theory.",
-    tags: ["Analysis", "Writeup"],
+      "Part of the Where in the Timeline!? The Stark Side series, digging into Andor's second season and how it fits into the broader Star Wars lore and chronology.",
+    tags: ["YouTube", "Star Wars", "Andor"],
+    url: "https://youtu.be/Z1gunEIMmQc",
   },
   {
     id: "proj-7",

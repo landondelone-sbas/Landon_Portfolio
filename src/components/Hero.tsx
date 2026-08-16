@@ -1,4 +1,3 @@
-import FocusMeter from "./FocusMeter";
 import OrbitCarousel from "./OrbitCarousel";
 
 export default function Hero() {
@@ -41,10 +40,6 @@ export default function Hero() {
             >
               Get In Touch
             </a>
-          </div>
-
-          <div className="mt-14">
-            <FocusMeter />
           </div>
         </div>
 

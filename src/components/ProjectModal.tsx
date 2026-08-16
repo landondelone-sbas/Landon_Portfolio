@@ -140,7 +140,7 @@ export default function ProjectModal({ project, onClose }: Props) {
               rel="noopener noreferrer"
               className={`mt-6 inline-block font-display text-sm font-semibold uppercase tracking-widest ${accent.badge.split(" ")[1]}`}
             >
-              Watch on YouTube ↗
+              {youtubeId ? "Watch on YouTube ↗" : "View Live Project ↗"}
             </a>
           )}
         </div>
