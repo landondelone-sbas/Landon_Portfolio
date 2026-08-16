@@ -8,6 +8,7 @@ export interface Project {
   detail: string;
   tags: string[];
   format: "Project" | "Video" | "Breakdown" | "Dashboard" | "Image";
+  url?: string;
 }
 
 export const categoryMeta: Record<
@@ -42,24 +43,40 @@ export const projects: Project[] = [
     tags: ["TypeScript", "Automation"],
   },
   {
-    id: "proj-3",
+    id: "sports-dvoa",
     category: "sports",
-    format: "Dashboard",
-    title: "Placeholder: Weekly Performance Metrics",
-    summary: "Interactive breakdown of team or player performance data.",
+    format: "Video",
+    title: '"What is DVOA? NFL Betting’s Secret Weapon Explained"',
+    summary:
+      "Breaking down DVOA (Defense-adjusted Value Over Average) and why it's one of the sharpest efficiency metrics in NFL analytics.",
     detail:
-      "Embed a real chart or link to your analytics writeup here — advanced stats, trend lines, or a matchup model.",
-    tags: ["Data Viz", "Analytics"],
+      "Part of the Crash Against the Spread series breaking down the advanced stats behind sports betting and team evaluation — this one covers DVOA, how it's calculated, and why it holds up better than raw yardage or points.",
+    tags: ["YouTube", "NFL", "Analytics"],
+    url: "https://youtu.be/_hFRqLB0W28",
   },
   {
-    id: "proj-4",
+    id: "sports-ortg",
     category: "sports",
-    format: "Breakdown",
-    title: "Placeholder: Season Trend Analysis",
-    summary: "Long-form breakdown of a statistical trend across a season.",
+    format: "Video",
+    title: "What is Offensive Rating (ORtg) & How to Calculate It?",
+    summary:
+      "A walkthrough of Offensive Rating — how it's calculated and why it's a better read on scoring efficiency than points per game.",
     detail:
-      "Swap in your actual writeup, video, or chart set — this card is a placeholder for a real analytics piece.",
-    tags: ["Analytics", "Writeup"],
+      "Part of the Crash Against the Spread series breaking down the advanced stats behind sports betting and team evaluation — this one covers Offensive Rating (ORtg), the formula behind it, and how to use it to judge NBA offenses.",
+    tags: ["YouTube", "NBA", "Analytics"],
+    url: "https://youtu.be/VAdO4RfR8ZM",
+  },
+  {
+    id: "sports-woba",
+    category: "sports",
+    format: "Video",
+    title: "What is wOBA? Baseball’s Ultimate Hitting Metric Explained",
+    summary:
+      "Explaining wOBA (Weighted On-Base Average) and why it's become the go-to stat for measuring real hitting value.",
+    detail:
+      "Part of the Crash Against the Spread series breaking down the advanced stats behind sports betting and team evaluation — this one covers wOBA, how it weights each outcome at the plate, and why it beats batting average as a measure of hitting.",
+    tags: ["YouTube", "MLB", "Analytics"],
+    url: "https://youtu.be/zZH6KjN4eWo",
   },
   {
     id: "proj-5",

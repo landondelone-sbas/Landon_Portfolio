@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import type { Project } from "../data/projects";
 import { categoryMeta } from "../data/projects";
+import { getYouTubeEmbedUrl, getYouTubeId } from "../lib/youtube";
 
 const ACCENT: Record<Project["category"], { badge: string; ring: string }> = {
   webdev: { badge: "border-green/60 text-green", ring: "glow-green" },
@@ -58,6 +59,7 @@ export default function ProjectModal({ project, onClose }: Props) {
 
   const meta = categoryMeta[project.category];
   const accent = ACCENT[project.category];
+  const youtubeId = project.url ? getYouTubeId(project.url) : null;
 
   return (
     <div
@@ -97,11 +99,24 @@ export default function ProjectModal({ project, onClose }: Props) {
             {project.title}
           </h2>
 
-          <div className="mt-4 flex h-48 items-center justify-center rounded-2xl border border-line bg-panel-2">
-            <span className="font-display text-sm font-semibold uppercase tracking-widest text-mute">
-              {project.format} preview placeholder
-            </span>
-          </div>
+          {youtubeId ? (
+            <div className="mt-4 aspect-video w-full overflow-hidden rounded-2xl border border-line">
+              <iframe
+                className="h-full w-full"
+                src={getYouTubeEmbedUrl(youtubeId)}
+                title={project.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          ) : (
+            <div className="mt-4 flex h-48 items-center justify-center rounded-2xl border border-line bg-panel-2">
+              <span className="font-display text-sm font-semibold uppercase tracking-widest text-mute">
+                {project.format} preview placeholder
+              </span>
+            </div>
+          )}
 
           <p className="mt-6 text-pretty font-body text-lg leading-relaxed text-mute">
             {project.detail}
@@ -117,6 +132,17 @@ export default function ProjectModal({ project, onClose }: Props) {
               </li>
             ))}
           </ul>
+
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`mt-6 inline-block font-display text-sm font-semibold uppercase tracking-widest ${accent.badge.split(" ")[1]}`}
+            >
+              Watch on YouTube ↗
+            </a>
+          )}
         </div>
       </div>
     </div>

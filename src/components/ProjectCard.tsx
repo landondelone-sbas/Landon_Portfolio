@@ -1,5 +1,6 @@
 import type { Project } from "../data/projects";
 import { categoryMeta } from "../data/projects";
+import { getYouTubeId, getYouTubeThumbnail } from "../lib/youtube";
 
 const ACCENT: Record<
   Project["category"],
@@ -39,6 +40,7 @@ interface Props {
 export default function ProjectCard({ project, onOpen }: Props) {
   const meta = categoryMeta[project.category];
   const accent = ACCENT[project.category];
+  const youtubeId = project.url ? getYouTubeId(project.url) : null;
 
   return (
     <article className="mb-6 break-inside-avoid">
@@ -48,11 +50,28 @@ export default function ProjectCard({ project, onOpen }: Props) {
         className={`block w-full rounded-2xl border bg-panel text-left transition-all duration-300 ${accent.border} ${accent.glow}`}
       >
         <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-t-2xl border-b border-line bg-panel-2">
-          <span
-            className={`select-none font-display text-5xl font-bold uppercase opacity-20 ${accent.text}`}
-          >
-            {project.format}
-          </span>
+          {youtubeId ? (
+            <>
+              <img
+                src={getYouTubeThumbnail(youtubeId)}
+                alt=""
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+              <span
+                aria-hidden="true"
+                className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-void/70 text-xl text-ink backdrop-blur-sm"
+              >
+                ▶
+              </span>
+            </>
+          ) : (
+            <span
+              className={`select-none font-display text-5xl font-bold uppercase opacity-20 ${accent.text}`}
+            >
+              {project.format}
+            </span>
+          )}
           <span
             aria-hidden="true"
             className={`absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border bg-void text-sm ${accent.badge}`}
