@@ -6,8 +6,8 @@ const SOCIALS = [
   { label: "GitHub", href: "https://github.com/landondelone-sbas" },
   { label: "Instagram", href: "https://www.instagram.com/crashlandon/" },
   { label: "LinkedIn", href: "www.linkedin.com/in/landon-delone-1b360945" },
-  { label: "YouTube", href: "https://www.youtube.com/@StarkSideReview" },
-  { label: "YouTube", href: "https://www.youtube.com/@crashagainstthespread" },
+  { label: "YouTube: The Stark Side", href: "https://www.youtube.com/@StarkSideReview" },
+  { label: "YouTube: Crash Against The Spread", href: "https://www.youtube.com/@crashagainstthespread" },
 ];
 
 export default function Contact() {
