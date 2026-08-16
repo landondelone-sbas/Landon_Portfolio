@@ -1,4 +1,4 @@
-export type Category = "webdev" | "sports" | "entertainment" | "aiart";
+export type Category = "webdev" | "sports" | "entertainment" | "logos";
 
 export interface Project {
   id: string;
@@ -9,6 +9,8 @@ export interface Project {
   tags: string[];
   format: "Project" | "Video" | "Breakdown" | "Dashboard" | "Image";
   url?: string;
+  image?: string;
+  builtByMe?: boolean;
 }
 
 export const categoryMeta: Record<
@@ -18,7 +20,7 @@ export const categoryMeta: Record<
   webdev: { label: "AI Web Development", short: "AI DEV" },
   sports: { label: "Sports Analytics", short: "SPORTS" },
   entertainment: { label: "Entertainment Breakdowns", short: "MEDIA" },
-  aiart: { label: "AI Pictures", short: "AI ART" },
+  logos: { label: "Logo Design", short: "LOGOS" },
 };
 
 export const projects: Project[] = [
@@ -30,9 +32,11 @@ export const projects: Project[] = [
     summary:
       "A web-based build of the classic Tetris, playable with keyboard or touch.",
     detail:
-      "Full falling-block puzzle mechanics — hold piece, hard drop, level progression, and score tracking — built for both keyboard and touch input.",
+      "Designed and built solo, end to end. Full falling-block puzzle mechanics — hold piece, hard drop, level progression, and score tracking — built for both keyboard and touch input.",
     tags: ["JavaScript", "Game Dev"],
     url: "https://landondelone-sbas.github.io/Tetris/",
+    image: "/images/projects/tetris.jpg",
+    builtByMe: true,
   },
   {
     id: "webdev-server-tracker",
@@ -41,9 +45,11 @@ export const projects: Project[] = [
     title: "Server Tracker",
     summary: "A dashboard for logging and reviewing server shifts.",
     detail:
-      "Shift-management dashboard with an overview view, a form for adding new shifts, historical data, generated reports, and a settings panel — built for tracking server work over time.",
+      "Designed and built solo, end to end. Shift-management dashboard with an overview view, a form for adding new shifts, historical data, generated reports, and a settings panel — built for tracking server work over time.",
     tags: ["Dashboard", "Shift Tracking"],
     url: "https://landondelone-sbas.github.io/server_tracker/",
+    image: "/images/projects/server-tracker.jpg",
+    builtByMe: true,
   },
   {
     id: "webdev-whiteboard",
@@ -52,9 +58,11 @@ export const projects: Project[] = [
     title: "Whiteboard",
     summary: "A browser-based drawing app with a full basic toolset.",
     detail:
-      "Canvas drawing app with pen, eraser, rectangle, circle, and text tools, adjustable color and brush size, a clear-board action, and PNG export.",
+      "Designed and built solo, end to end. Canvas drawing app with pen, eraser, rectangle, circle, and text tools, adjustable color and brush size, a clear-board action, and PNG export.",
     tags: ["Canvas API", "Drawing Tool"],
     url: "https://landondelone-sbas.github.io/WhiteboardApp/",
+    image: "/images/projects/whiteboard.jpg",
+    builtByMe: true,
   },
   {
     id: "sports-dvoa",
@@ -129,23 +137,47 @@ export const projects: Project[] = [
     url: "https://youtu.be/H3lzYK6lxaQ",
   },
   {
-    id: "proj-7",
-    category: "aiart",
+    id: "logo-stark-1",
+    category: "logos",
     format: "Image",
-    title: "Placeholder: AI Generated Piece 01",
-    summary: "Concept image generated with an AI image model.",
+    title: "The Stark Side — Concept 1",
+    summary: "A wordmark blending a Stark direwolf with a lightsaber accent.",
     detail:
-      "Swap in a real image, the prompt/model used, and a short note on the idea behind it.",
-    tags: ["AI Art", "Midjourney"],
+      "Logo concept designed for The Stark Side channel — a direwolf head worked into the lettering with a lightsaber standing in for the 'I', tying the Game of Thrones and Star Wars halves of the brand together in one mark.",
+    tags: ["Logo Design", "Branding"],
+    image: "/images/logos/stark-side-logo-1.png",
   },
   {
-    id: "proj-8",
-    category: "aiart",
+    id: "logo-stark-2",
+    category: "logos",
     format: "Image",
-    title: "Placeholder: AI Generated Piece 02",
-    summary: "Concept image generated with an AI image model.",
+    title: "The Stark Side — Concept 2",
+    summary: "A poster-style mark with a wolf crest and a glowing lightsaber beam.",
     detail:
-      "Swap in a real image, the prompt/model used, and a short note on the idea behind it.",
-    tags: ["AI Art"],
+      "Logo concept designed for The Stark Side channel — a starfield poster treatment with a wolf crest above the wordmark and a lightsaber beam arcing through the type, leaning harder into the Star Wars side of the brand.",
+    tags: ["Logo Design", "Branding"],
+    image: "/images/logos/stark-side-logo-2.jpg",
+  },
+  {
+    id: "logo-stark-3",
+    category: "logos",
+    format: "Image",
+    title: "The Stark Side — Concept 3",
+    summary: "A monogram 'S' combining a direwolf, a lightsaber, and a clock hand.",
+    detail:
+      "Logo concept designed for The Stark Side channel — a single monogram 'S' built from a direwolf silhouette, a lightsaber, and a clock hand, nodding to the channel's timeline-mapping format in one compact icon.",
+    tags: ["Logo Design", "Branding"],
+    image: "/images/logos/stark-side-logo-3.png",
+  },
+  {
+    id: "logo-stark-4",
+    category: "logos",
+    format: "Image",
+    title: "The Stark Side — Concept 4",
+    summary: "A collegiate-style wordmark layering direwolf, saber, and helmet icons into the letterforms.",
+    detail:
+      "Logo concept designed for The Stark Side channel — a bolder, collegiate-style wordmark that layers a direwolf, a lightsaber, and Star Wars helmet iconography directly into the letterforms for a more emblematic look.",
+    tags: ["Logo Design", "Branding"],
+    image: "/images/logos/stark-side-logo-4.jpg",
   },
 ];

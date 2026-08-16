@@ -50,10 +50,13 @@ export default function About() {
           </div>
         </div>
 
-        <div className="flex h-64 items-center justify-center rounded-3xl border border-line bg-panel lg:h-full">
-          <span className="font-display text-sm font-semibold uppercase tracking-widest text-mute">
-            Photo placeholder
-          </span>
+        <div className="overflow-hidden rounded-3xl border border-line bg-panel">
+          <img
+            src="/images/landon-portrait.jpg"
+            alt="AI-generated portrait of Landon DeLone as an Imperial officer"
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
         </div>
       </div>
     </section>

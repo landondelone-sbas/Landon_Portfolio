@@ -11,7 +11,7 @@ const FILTERS: { id: Filter; label: string }[] = [
   { id: "webdev", label: categoryMeta.webdev.short },
   { id: "sports", label: categoryMeta.sports.short },
   { id: "entertainment", label: categoryMeta.entertainment.short },
-  { id: "aiart", label: categoryMeta.aiart.short },
+  { id: "logos", label: categoryMeta.logos.short },
 ];
 
 export default function Showcase() {
@@ -38,8 +38,8 @@ export default function Showcase() {
               Selected Work
             </h2>
             <p className="mt-2 max-w-xl font-body text-mute">
-              Placeholder entries — swap in real projects, videos, and
-              breakdowns as they go live.
+              Shipped web projects, sports analytics breakdowns,
+              entertainment lore videos, and logo design work.
             </p>
           </div>
 

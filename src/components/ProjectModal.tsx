@@ -7,7 +7,7 @@ const ACCENT: Record<Project["category"], { badge: string; ring: string }> = {
   webdev: { badge: "border-green/60 text-green", ring: "glow-green" },
   sports: { badge: "border-purple/60 text-purple", ring: "glow-purple" },
   entertainment: { badge: "border-pink/60 text-pink", ring: "glow-pink" },
-  aiart: { badge: "border-green/60 text-green", ring: "glow-green" },
+  logos: { badge: "border-green/60 text-green", ring: "glow-green" },
 };
 
 interface Props {
@@ -110,6 +110,15 @@ export default function ProjectModal({ project, onClose }: Props) {
                 allowFullScreen
               />
             </div>
+          ) : project.image ? (
+            <div className="mt-4 overflow-hidden rounded-2xl border border-line bg-panel-2">
+              <img
+                src={project.image}
+                alt=""
+                loading="lazy"
+                className="w-full object-cover"
+              />
+            </div>
           ) : (
             <div className="mt-4 flex h-48 items-center justify-center rounded-2xl border border-line bg-panel-2">
               <span className="font-display text-sm font-semibold uppercase tracking-widest text-mute">
@@ -118,7 +127,13 @@ export default function ProjectModal({ project, onClose }: Props) {
             </div>
           )}
 
-          <p className="mt-6 text-pretty font-body text-lg leading-relaxed text-mute">
+          {project.builtByMe && (
+            <p className="mt-4 font-display text-xs font-bold uppercase tracking-widest text-green">
+              Built by Me — Solo Project
+            </p>
+          )}
+
+          <p className="mt-4 text-pretty font-body text-lg leading-relaxed text-mute">
             {project.detail}
           </p>
 

@@ -24,7 +24,7 @@ const ACCENT: Record<
     text: "text-pink",
     badge: "border-pink/60 text-pink",
   },
-  aiart: {
+  logos: {
     border: "border-green/40 hover:border-green",
     glow: "hover:glow-green",
     text: "text-green",
@@ -41,6 +41,7 @@ export default function ProjectCard({ project, onOpen }: Props) {
   const meta = categoryMeta[project.category];
   const accent = ACCENT[project.category];
   const youtubeId = project.url ? getYouTubeId(project.url) : null;
+  const thumbnailSrc = youtubeId ? getYouTubeThumbnail(youtubeId) : project.image;
 
   return (
     <article className="mb-6 break-inside-avoid">
@@ -50,20 +51,22 @@ export default function ProjectCard({ project, onOpen }: Props) {
         className={`block w-full rounded-2xl border bg-panel text-left transition-all duration-300 ${accent.border} ${accent.glow}`}
       >
         <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-t-2xl border-b border-line bg-panel-2">
-          {youtubeId ? (
+          {thumbnailSrc ? (
             <>
               <img
-                src={getYouTubeThumbnail(youtubeId)}
+                src={thumbnailSrc}
                 alt=""
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
-              <span
-                aria-hidden="true"
-                className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-void/70 text-xl text-ink backdrop-blur-sm"
-              >
-                ▶
-              </span>
+              {youtubeId && (
+                <span
+                  aria-hidden="true"
+                  className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-void/70 text-xl text-ink backdrop-blur-sm"
+                >
+                  ▶
+                </span>
+              )}
             </>
           ) : (
             <span
@@ -81,7 +84,7 @@ export default function ProjectCard({ project, onOpen }: Props) {
         </div>
 
         <div className="p-5">
-          <div className="mb-3 flex items-center gap-2">
+          <div className="mb-3 flex flex-wrap items-center gap-2">
             <span
               className={`rounded-full border px-2 py-0.5 font-display text-xs font-bold uppercase tracking-widest ${accent.badge}`}
             >
@@ -90,6 +93,11 @@ export default function ProjectCard({ project, onOpen }: Props) {
             <span className="font-display text-xs font-semibold uppercase tracking-widest text-mute">
               {project.format}
             </span>
+            {project.builtByMe && (
+              <span className="rounded-full border border-green/60 bg-green/10 px-2 py-0.5 font-display text-xs font-bold uppercase tracking-widest text-green">
+                Built by Me
+              </span>
+            )}
           </div>
 
           <h3 className="font-display text-xl font-semibold text-ink">
