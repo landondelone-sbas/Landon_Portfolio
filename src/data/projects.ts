@@ -117,6 +117,18 @@ export const projects: Project[] = [
     url: "https://youtu.be/Z1gunEIMmQc",
   },
   {
+    id: "entertainment-sw-watch-order",
+    category: "entertainment",
+    format: "Video",
+    title: "Star Wars Chronological Watch Order 2026 (Canon + Legends Explained)",
+    summary:
+      "A full chronological watch order for Star Wars, covering both canon and Legends continuity.",
+    detail:
+      "Part of the Where in the Timeline!? The Stark Side series, laying out the complete Star Wars timeline in watch order across both canon and Legends material.",
+    tags: ["YouTube", "Star Wars", "Watch Order"],
+    url: "https://youtu.be/H3lzYK6lxaQ",
+  },
+  {
     id: "proj-7",
     category: "aiart",
     format: "Image",
