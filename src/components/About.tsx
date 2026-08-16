@@ -18,7 +18,7 @@ export default function About() {
             About
           </p>
           <h2 className="font-heading text-4xl leading-tight text-ink sm:text-5xl">
-            Landon DeLone
+            Landon Delone
           </h2>
 
           <div className="mt-6 max-w-prose space-y-4 text-pretty font-body text-lg leading-relaxed text-mute">
@@ -55,7 +55,7 @@ export default function About() {
         <div className="overflow-hidden rounded-3xl border border-line bg-panel">
           <img
             src={withBase("/images/landon-portrait.jpg")}
-            alt="AI-generated portrait of Landon DeLone as an Imperial officer"
+            alt="AI-generated portrait of Landon Delone as an Imperial officer"
             loading="lazy"
             className="h-full w-full object-cover"
           />

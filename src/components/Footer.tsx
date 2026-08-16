@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
 
           <p className="mt-8 text-center font-display text-xs font-semibold uppercase tracking-widest text-mute sm:text-left">
-            © {new Date().getFullYear()} Landon DeLone
+            © {new Date().getFullYear()} Landon Delone
           </p>
         </div>
       </div>
