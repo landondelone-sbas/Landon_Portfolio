@@ -9,7 +9,7 @@ export default function TextMask() {
   return (
     <section className="relative overflow-hidden border-b border-line px-4 py-24 sm:px-6 sm:py-32">
       <div className="relative mx-auto flex max-w-6xl items-center justify-center">
-        <h2 className="text-mask-fill select-none text-center font-display text-[18vw] font-bold uppercase leading-none tracking-tighter sm:text-[14vw] lg:text-[160px]">
+        <h2 className="text-mask-fill select-none text-center font-heading text-[18vw] leading-[1.05] sm:text-[14vw] lg:text-[160px]">
           Signal
         </h2>
 

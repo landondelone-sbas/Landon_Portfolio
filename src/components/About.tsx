@@ -15,7 +15,7 @@ export default function About() {
           <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-pink">
             About
           </p>
-          <h2 className="font-display text-4xl font-bold uppercase tracking-tight text-ink sm:text-5xl">
+          <h2 className="font-heading text-4xl leading-tight text-ink sm:text-5xl">
             Landon DeLone
           </h2>
 

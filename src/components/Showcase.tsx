@@ -34,7 +34,7 @@ export default function Showcase() {
             <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-pink">
               Showcase
             </p>
-            <h2 className="font-display text-4xl font-bold uppercase tracking-tight text-ink sm:text-5xl">
+            <h2 className="font-heading text-4xl leading-tight text-ink sm:text-5xl">
               Selected Work
             </h2>
             <p className="mt-2 max-w-xl font-body text-mute">

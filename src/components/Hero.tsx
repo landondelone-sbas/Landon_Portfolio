@@ -17,7 +17,7 @@ export default function Hero() {
           <p className="mb-4 font-display text-sm font-semibold uppercase tracking-[0.3em] text-pink">
             Portfolio
           </p>
-          <h1 className="text-balance font-display text-5xl font-bold uppercase leading-[0.95] tracking-tight text-ink sm:text-7xl">
+          <h1 className="text-balance font-heading text-5xl leading-tight text-ink sm:text-7xl">
             AI Web Developer.
             <br />
             <span className="text-glow-green text-green">Sports &amp; Media</span> Analyst.

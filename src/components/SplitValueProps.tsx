@@ -41,7 +41,7 @@ export default function SplitValueProps() {
               className={`absolute -right-4 -top-4 h-24 w-24 rounded-full border-8 ${card.ringColor}`}
             />
 
-            <h3 className="relative font-display text-4xl font-bold tracking-tight sm:text-5xl">
+            <h3 className="relative font-heading text-4xl leading-tight sm:text-5xl">
               {card.heading}
             </h3>
             <p className="relative mt-4 max-w-sm text-pretty font-body text-base leading-relaxed opacity-80 sm:text-lg">
