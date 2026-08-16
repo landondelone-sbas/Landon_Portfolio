@@ -3,9 +3,11 @@ import { useState, type FormEvent } from "react";
 const EMAIL = "landondelone@gmail.com";
 
 const SOCIALS = [
-  { label: "GitHub", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "YouTube", href: "#" },
+  { label: "GitHub", href: "https://github.com/landondelone-sbas" },
+  { label: "Instagram", href: "https://www.instagram.com/crashlandon/" },
+  { label: "LinkedIn", href: "www.linkedin.com/in/landon-delone-1b360945" },
+  { label: "YouTube", href: "https://www.youtube.com/@StarkSideReview" },
+  { label: "YouTube", href: "https://www.youtube.com/@crashagainstthespread" },
 ];
 
 export default function Contact() {
@@ -33,7 +35,7 @@ export default function Contact() {
             Let's Talk
           </h2>
           <p className="mt-4 max-w-prose text-pretty font-body text-lg leading-relaxed text-mute">
-            Have a project, a dataset, or a story worth breaking down? Send a
+            Have a project, a dataset, or a idea for a Lore breakdown? Send a
             message and I'll get back to you.
           </p>
 
