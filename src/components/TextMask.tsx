@@ -10,7 +10,7 @@ export default function TextMask() {
     <section className="relative overflow-hidden border-b border-line px-4 py-24 sm:px-6 sm:py-32">
       <div className="relative mx-auto flex max-w-6xl items-center justify-center">
         <h2 className="text-mask-fill select-none text-center font-heading text-[18vw] leading-[1.05] sm:text-[14vw] lg:text-[160px]">
-          Signal
+          Solutions
         </h2>
 
         {BADGES.map((badge) => (
@@ -25,7 +25,7 @@ export default function TextMask() {
       </div>
 
       <p className="relative mx-auto mt-8 max-w-md text-balance text-center font-body text-mute">
-        Signal over noise — in the code I ship and the breakdowns I publish.
+        Focus mixed in with fun.
       </p>
     </section>
   );

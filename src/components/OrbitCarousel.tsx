@@ -3,10 +3,10 @@ import type { CSSProperties } from "react";
 const ITEMS = [
   { label: "AI DEV", glow: "glow-green", border: "border-green/60" },
   { label: "SPORTS", glow: "glow-purple", border: "border-purple/60" },
-  { label: "MEDIA", glow: "glow-pink", border: "border-pink/60" },
-  { label: "AI ART", glow: "glow-green", border: "border-green/60" },
-  { label: "BUILD", glow: "glow-purple", border: "border-purple/60" },
-  { label: "ANALYZE", glow: "glow-pink", border: "border-pink/60" },
+  { label: "STAR WARS", glow: "glow-pink", border: "border-pink/60" },
+  { label: "YOUTUBE", glow: "glow-green", border: "border-green/60" },
+  { label: "CODING", glow: "glow-purple", border: "border-purple/60" },
+  { label: "ANALYTICS", glow: "glow-pink", border: "border-pink/60" },
 ];
 
 export default function OrbitCarousel() {
