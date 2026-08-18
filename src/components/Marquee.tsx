@@ -1,12 +1,12 @@
 const ITEMS = [
   { label: "AI DEV", border: "border-green/50", text: "text-green" },
   { label: "SPORTS", border: "border-purple/50", text: "text-purple" },
-  { label: "MEDIA", border: "border-pink/50", text: "text-pink" },
-  { label: "AI ART", border: "border-green/50", text: "text-green" },
-  { label: "REACT", border: "border-purple/50", text: "text-purple" },
-  { label: "DATA VIZ", border: "border-pink/50", text: "text-pink" },
-  { label: "VIDEO", border: "border-green/50", text: "text-green" },
-  { label: "ANALYTICS", border: "border-purple/50", text: "text-purple" },
+  { label: "STAR WARS", border: "border-pink/50", text: "text-pink" },
+  { label: "MARVEL", border: "border-green/50", text: "text-green" },
+  { label: "ASOIAF", border: "border-purple/50", text: "text-purple" },
+  { label: "ANALYTICS", border: "border-pink/50", text: "text-pink" },
+  { label: "YOUTUBE", border: "border-green/50", text: "text-green" },
+  { label: "CODING", border: "border-purple/50", text: "text-purple" },
 ];
 
 export default function Marquee() {

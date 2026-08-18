@@ -23,15 +23,23 @@ export default function About() {
 
           <div className="mt-6 max-w-prose space-y-4 text-pretty font-body text-lg leading-relaxed text-mute">
             <p>
-              Placeholder bio — replace with your real story. Lead with who
-              you are, what you build, and what pulls you toward sports
-              data and entertainment analysis outside of work.
+              I'm Landon Delone, a software developer and digital creator with a passion 
+              for building automated systems and engaging communities. On the technical 
+              side, my recent focus has been on workflow automation and AI integration. 
+              I work primarily with Python, JavaScript, and TypeScript, utilizing tools 
+              like Docker, Supabase, and n8n to build streamlined backend workflows. 
+              Whether I'm engineering custom contexts for LLMs or developing full-stack 
+              applications, I love turning complex bottlenecks into hands-off solutions.
             </p>
             <p>
-              Mention how the AI development work and the analyst work
-              inform each other: the same instinct for finding the signal
-              in the data shows up whether you're shipping a product or
-              breaking down a box score.
+              When I'm not writing code, I'm researching and producing content for my two 
+              YouTube channels. On Crash Against the Spread, I apply a data-driven approach 
+              to sports handicapping and advanced betting metrics. On Where in the 
+              Timeline?! The Stark Side, I shift gears to storytelling, unpacking the rich 
+              lore of Star Wars, Marvel, and the A Song of Ice and Fire universes. For me, 
+              software development and content creation are driven by the exact same 
+              curiosity: digging into complex systems and understanding how all the pieces 
+              fit together.
             </p>
           </div>
 

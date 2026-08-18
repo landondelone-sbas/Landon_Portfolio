@@ -19,12 +19,12 @@ export default function Hero() {
           <h1 className="text-balance font-heading text-5xl leading-tight text-ink sm:text-7xl">
             AI Web Developer.
             <br />
-            <span className="text-glow-green text-green">Sports &amp; Media</span> Analyst.
+            <span className="text-glow-green text-green">Sports Analyst &amp; Lore Breakdowns,</span> Nerd.
           </h1>
           <p className="mt-6 max-w-xl text-pretty font-body text-lg leading-relaxed text-mute sm:text-xl">
-            I build AI-powered web products, and spend the rest of my time
-            breaking down sports performance data and entertainment lore for
-            anyone who'll watch or read.
+            I build AI-powered web products, solve problems with code, and
+            also operate two Youtube channels, one for sports analytics, and the
+            for deep dives into the lore of Star Wars, Marvel, and ASOIAF. Follow the journey!
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -32,13 +32,13 @@ export default function Hero() {
               href="#showcase"
               className="glow-green rounded-full bg-green px-7 py-3.5 font-display text-sm font-bold uppercase tracking-widest text-void transition-transform hover:scale-105"
             >
-              View Showcase
+              See My Work
             </a>
             <a
               href="#contact"
               className="rounded-full border border-line px-7 py-3.5 font-display text-sm font-semibold uppercase tracking-widest text-ink transition-colors hover:border-purple hover:text-purple"
             >
-              Get In Touch
+              Reach Out
             </a>
           </div>
         </div>
