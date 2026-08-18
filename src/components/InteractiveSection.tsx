@@ -29,24 +29,7 @@ export default function InteractiveSection() {
 
   return (
     <section className="border-b border-line bg-panel px-4 py-16 sm:px-6">
-      <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[380px_1fr]">
-        <div className="mx-auto w-full max-w-[280px]">
-          <div className="glow-purple relative rounded-[2.5rem] border border-line bg-void p-3">
-            <div className="mx-auto mb-2 h-1.5 w-16 rounded-full bg-line" />
-            <div className="flex aspect-[9/18] flex-col justify-between rounded-[1.75rem] bg-panel-2 p-4">
-              <div>
-                <div className="mb-3 h-3 w-20 rounded-full bg-green/60" />
-                <div className="space-y-2">
-                  <div className="h-16 rounded-xl border border-green/40 bg-void" />
-                  <div className="h-16 rounded-xl border border-purple/40 bg-void" />
-                  <div className="h-16 rounded-xl border border-pink/40 bg-void" />
-                </div>
-              </div>
-              <div className="h-10 rounded-full bg-green/90" />
-            </div>
-          </div>
-        </div>
-
+      <div className="mx-auto max-w-3xl">
         <div>
           <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-pink">
             The Details
