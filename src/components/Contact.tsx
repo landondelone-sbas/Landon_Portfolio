@@ -5,7 +5,7 @@ const EMAIL = "landondelone@gmail.com";
 const SOCIALS = [
   { label: "GitHub", href: "https://github.com/landondelone-sbas" },
   { label: "Instagram", href: "https://www.instagram.com/crashlandon/" },
-  { label: "LinkedIn", href: "www.linkedin.com/in/landonsbas" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/landonsbas" },
   { label: "YouTube: The Stark Side", href: "https://www.youtube.com/@StarkSideReview" },
   { label: "YouTube: Crash Against The Spread", href: "https://www.youtube.com/@crashagainstthespread" },
 ];
