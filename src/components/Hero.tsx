@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
           <p className="mt-6 max-w-xl text-pretty font-body text-lg leading-relaxed text-mute sm:text-xl">
             I build AI-powered web products, solve problems with code, and
-            also operate two Youtube channels, one for sports analytics, and the
+            also operate two Youtube channels, one for sports analytics, and the other
             for deep dives into the lore of Star Wars, Marvel, and ASOIAF. Follow the journey!
           </p>
 

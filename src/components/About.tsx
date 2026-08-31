@@ -27,7 +27,7 @@ export default function About() {
               for building automated systems and engaging communities. On the technical 
               side, my recent focus has been on workflow automation and AI integration. 
               I work primarily with Python, JavaScript, and TypeScript, utilizing tools 
-              like Docker, Supabase, and n8n to build streamlined backend workflows. 
+              like Docker, Supabase, and Render to build streamlined backend workflows. 
               Whether I'm engineering custom contexts for LLMs or developing full-stack 
               applications, I love turning complex bottlenecks into hands-off solutions.
             </p>
