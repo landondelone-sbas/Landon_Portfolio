@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import OrbitCarousel from "./OrbitCarousel";
+import HeroCard3D from "./HeroCard3D";
 import ParticleField from "./ParticleField";
 import { gsap, ScrollTrigger } from "../lib/gsap";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
@@ -7,16 +7,14 @@ import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const copyRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const reducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const section = sectionRef.current;
     const card = cardRef.current;
-    const ring = ringRef.current;
     const copy = copyRef.current;
-    if (!section || !card || !ring || !copy || reducedMotion) return;
+    if (!section || !card || !copy || reducedMotion) return;
 
     const ctx = gsap.context(() => {
       // Scroll-scrubbed morph: the hero card grows from a centered 3D card
@@ -33,11 +31,11 @@ export default function Hero() {
         },
       });
 
-      // The copy and ring finish fading well before the card finishes
-      // scaling (duration 0.3 vs. 1, both starting at 0) so the enlarging
-      // card only ever grows into space that's already cleared — earlier
-      // versions ran both on the same timeline range and the card's edge
-      // visibly sliced through still-legible headline text mid-scroll.
+      // The copy finishes fading well before the card finishes scaling
+      // (duration 0.3 vs. 1, both starting at 0) so the enlarging card only
+      // ever grows into space that's already cleared — earlier versions ran
+      // both on the same timeline range and the card's edge visibly sliced
+      // through still-legible headline text mid-scroll.
       tl.to(
         card,
         {
@@ -57,7 +55,6 @@ export default function Hero() {
         },
         0,
       )
-        .to(ring, { autoAlpha: 0, scale: 0.85, ease: "power1.in", duration: 0.3 }, 0)
         .to(copy, { autoAlpha: 0, y: -40, ease: "power1.in", duration: 0.3 }, 0)
         .to(
           card.querySelector("[data-monogram]"),
@@ -128,7 +125,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <OrbitCarousel cardRef={cardRef} ringRef={ringRef} />
+        <HeroCard3D ref={cardRef} />
       </div>
     </section>
   );

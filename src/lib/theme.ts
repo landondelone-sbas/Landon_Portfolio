@@ -2,8 +2,8 @@ import type { Category } from "../data/projects";
 
 /**
  * Shared gold/black accent cycle. One tone per project category so
- * ProjectCard, ProjectModal, Marquee, and OrbitCarousel all pull from
- * the same source instead of four separate hardcoded color maps.
+ * ProjectCard and ProjectModal both pull from the same source instead of
+ * two separate hardcoded color maps.
  */
 export const categoryAccent: Record<
   Category,
@@ -44,6 +44,3 @@ export const categoryAccent: Record<
     badge: "border-champagne/60 text-champagne",
   },
 };
-
-/** Plain 4-tone cycle for decorative elements not tied to a category (Marquee, OrbitCarousel). */
-export const accentCycle = ["gold", "amber", "yellow", "champagne"] as const;

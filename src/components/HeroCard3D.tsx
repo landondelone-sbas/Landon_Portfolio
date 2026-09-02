@@ -3,9 +3,14 @@ import { gsap } from "../lib/gsap";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 /**
- * The hero's centerpiece: a CSS-3D tilting card (no WebGL) that sits at the
- * hub of OrbitCarousel's orbiting pills at rest, then becomes the target of
- * Hero.tsx's scroll-triggered morph into a full-bleed backdrop.
+ * The hero's centerpiece: a CSS-3D tilting card (no WebGL) that sits at rest
+ * next to the headline, then becomes the target of Hero.tsx's
+ * scroll-triggered morph into a full-bleed backdrop. Previously sat at the
+ * hub of an always-spinning OrbitCarousel; that carousel animated forever
+ * regardless of scroll position or visibility and was pulled out as the
+ * prime suspect in a real-world GPU/compositor crash headless testing
+ * couldn't reproduce — this card alone only animates on pointer movement
+ * or during the scroll-morph, never continuously.
  */
 const HeroCard3D = forwardRef<HTMLDivElement>((_, forwardedRef) => {
   const tiltRef = useRef<HTMLDivElement>(null);
@@ -51,7 +56,7 @@ const HeroCard3D = forwardRef<HTMLDivElement>((_, forwardedRef) => {
   return (
     <div
       ref={forwardedRef}
-      className="relative z-10 h-24 w-24 sm:h-28 sm:w-28"
+      className="relative z-10 mx-auto h-52 w-52 sm:h-72 sm:w-72"
       style={{ perspective: "800px" }}
     >
       <div
@@ -68,7 +73,7 @@ const HeroCard3D = forwardRef<HTMLDivElement>((_, forwardedRef) => {
           className="absolute inset-0 flex items-center justify-center"
           style={{ transform: "translateZ(24px)" }}
         >
-          <span className="font-display text-2xl font-bold text-gold sm:text-3xl">
+          <span className="font-display text-5xl font-bold text-gold sm:text-6xl">
             LD
           </span>
         </div>
