@@ -27,10 +27,6 @@
   --color-champagne: #d9c88c;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background:
     linear-gradient(
@@ -164,9 +160,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
   .orbit-spin,
   .orbit-counter,
   .marquee-track {
