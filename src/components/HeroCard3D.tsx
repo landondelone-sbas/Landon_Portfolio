@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useRef } from "react";
 import { gsap } from "../lib/gsap";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
+import { withBase } from "../lib/assets";
 
 /**
  * The hero's centerpiece: a CSS-3D tilting card (no WebGL) that sits at rest
@@ -71,7 +72,7 @@ const HeroCard3D = forwardRef<HTMLDivElement>((_, forwardedRef) => {
         style={{ transformStyle: "preserve-3d" }}
       >
         <img
-          src="/images/landon-desk.webp"
+          src={withBase("/images/landon-desk.webp")}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
           style={{ transform: "translateZ(0px)" }}
