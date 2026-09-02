@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import HeroCard3D from "./HeroCard3D";
-import ParticleField from "./ParticleField";
 import { gsap, ScrollTrigger } from "../lib/gsap";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
@@ -102,20 +101,12 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <div className="relative inline-block">
-              {/* Sibling before the button, not a child of it — that way
-                  the button's own opaque bg-gold naturally covers the
-                  particles directly under it, while the overhang around
-                  the edges reads as particles "behind" the CTA, with no
-                  z-index tug-of-war against the button's own background. */}
-              <ParticleField />
-              <a
-                href="#showcase"
-                className="glow-gold rounded-full bg-gold px-7 py-3.5 font-display text-sm font-bold uppercase tracking-widest text-void transition-transform hover:scale-105"
-              >
-                See My Work
-              </a>
-            </div>
+            <a
+              href="#showcase"
+              className="glow-gold rounded-full bg-gold px-7 py-3.5 font-display text-sm font-bold uppercase tracking-widest text-void transition-transform hover:scale-105"
+            >
+              See My Work
+            </a>
             <a
               href="#contact"
               className="rounded-full border border-line px-7 py-3.5 font-display text-sm font-semibold uppercase tracking-widest text-ink transition-colors hover:border-amber hover:text-amber"
