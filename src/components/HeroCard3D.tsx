@@ -11,6 +11,11 @@ import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
  * prime suspect in a real-world GPU/compositor crash headless testing
  * couldn't reproduce — this card alone only animates on pointer movement
  * or during the scroll-morph, never continuously.
+ *
+ * The outer element (forwardedRef) is what Hero.tsx scales — it has no
+ * border-radius of its own. The visible rounded card is [data-card-shell]
+ * below; Hero.tsx targets that separately for the border-radius part of
+ * the morph.
  */
 const HeroCard3D = forwardRef<HTMLDivElement>((_, forwardedRef) => {
   const tiltRef = useRef<HTMLDivElement>(null);
@@ -61,22 +66,24 @@ const HeroCard3D = forwardRef<HTMLDivElement>((_, forwardedRef) => {
     >
       <div
         ref={tiltRef}
-        className="relative h-full w-full rounded-3xl border border-gold/60 bg-gradient-to-br from-panel-2 to-void glow-gold"
+        data-card-shell
+        className="relative h-full w-full overflow-hidden rounded-3xl border border-gold/60 bg-gradient-to-br from-panel-2 to-void glow-gold"
         style={{ transformStyle: "preserve-3d" }}
       >
+        <img
+          src="/images/landon-desk.webp"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ transform: "translateZ(0px)" }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/70 via-void/10 to-transparent"
+        />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-[3px] rounded-[calc(1.5rem-3px)] border border-champagne/25"
         />
-        <div
-          data-monogram
-          className="absolute inset-0 flex items-center justify-center"
-          style={{ transform: "translateZ(24px)" }}
-        >
-          <span className="font-display text-5xl font-bold text-gold sm:text-6xl">
-            LD
-          </span>
-        </div>
       </div>
     </div>
   );

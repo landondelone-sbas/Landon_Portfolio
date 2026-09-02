@@ -35,6 +35,14 @@ export default function Hero() {
       // ever grows into space that's already cleared — earlier versions ran
       // both on the same timeline range and the card's edge visibly sliced
       // through still-legible headline text mid-scroll.
+      //
+      // scale animates the outer wrapper (cardRef) since that's what needs
+      // to grow as a whole; border-radius animates [data-card-shell]
+      // specifically — that's the element with the actual rounded corners
+      // (the outer wrapper has none of its own), so animating radius on the
+      // wrapper was a no-op before this was split out.
+      const shell = card.querySelector<HTMLElement>("[data-card-shell]");
+
       tl.to(
         card,
         {
@@ -48,18 +56,15 @@ export default function Hero() {
               ) * 1.05
             );
           },
-          borderRadius: 0,
           ease: "power1.in",
           duration: 1,
         },
         0,
-      )
-        .to(copy, { autoAlpha: 0, y: -40, ease: "power1.in", duration: 0.3 }, 0)
-        .to(
-          card.querySelector("[data-monogram]"),
-          { autoAlpha: 0, ease: "none", duration: 0.25 },
-          0.55,
-        );
+      ).to(copy, { autoAlpha: 0, y: -40, ease: "power1.in", duration: 0.3 }, 0);
+
+      if (shell) {
+        tl.to(shell, { borderRadius: 0, ease: "power1.in", duration: 1 }, 0);
+      }
     }, section);
 
     return () => ctx.revert();
