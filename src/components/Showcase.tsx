@@ -31,7 +31,7 @@ export default function Showcase() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-pink">
+            <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-yellow">
               Showcase
             </p>
             <h2 className="font-heading text-4xl leading-tight text-ink sm:text-5xl">
@@ -58,8 +58,8 @@ export default function Showcase() {
                   aria-pressed={isActive}
                   className={`rounded-full border px-4 py-2 font-display text-sm font-semibold uppercase tracking-widest transition-colors ${
                     isActive
-                      ? "border-green bg-green text-void"
-                      : "border-line text-mute hover:border-green hover:text-green"
+                      ? "border-gold bg-gold text-void"
+                      : "border-line text-mute hover:border-gold hover:text-gold"
                   }`}
                 >
                   {f.label}

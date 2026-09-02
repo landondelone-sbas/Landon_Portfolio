@@ -14,16 +14,17 @@
   --font-signature: "Elliot Six", cursive;
   --font-heading: "Fredericka the Great", cursive;
 
-  --color-void: #050506;
-  --color-panel: #0e0e13;
-  --color-panel-2: #16161d;
-  --color-line: #26262f;
-  --color-ink: #f5f5f7;
-  --color-mute: #9a9aa8;
+  --color-void: #080708;
+  --color-panel: #141210;
+  --color-panel-2: #1c1815;
+  --color-line: #332c1e;
+  --color-ink: #f5efe0;
+  --color-mute: #a89a7c;
 
-  --color-green: #39ff88;
-  --color-purple: #b026ff;
-  --color-pink: #ff2e93;
+  --color-gold: #e8b731;
+  --color-amber: #ddc862;
+  --color-yellow: #f1e413;
+  --color-champagne: #d9c88c;
 }
 
 html {
@@ -34,9 +35,9 @@ body {
   background:
     linear-gradient(
       180deg,
-      rgba(5, 5, 6, 0.92) 0%,
-      rgba(5, 5, 6, 0.88) 50%,
-      rgba(5, 5, 6, 0.96) 100%
+      rgba(8, 7, 8, 0.92) 0%,
+      rgba(8, 7, 8, 0.88) 50%,
+      rgba(8, 7, 8, 0.96) 100%
     ),
     url("/images/landonworking.webp") center top / cover no-repeat fixed;
   color: var(--color-ink);
@@ -50,28 +51,37 @@ body {
 }
 
 ::selection {
-  background: var(--color-green);
+  background: var(--color-gold);
   color: var(--color-void);
 }
 
-/* --- Glow utilities --- */
-.glow-green {
+/* --- Glow utilities ---
+   Declared with @utility (not plain classes) so Tailwind v4 generates
+   real variant support — hover:glow-gold etc. previously did nothing,
+   since a bare .glow-green class isn't part of Tailwind's utility/variant
+   system and hover: has no rule to attach to. */
+@utility glow-gold {
   box-shadow:
-    0 0 20px rgba(57, 255, 136, 0.35),
-    0 0 60px rgba(57, 255, 136, 0.15);
+    0 0 20px rgba(232, 183, 49, 0.35),
+    0 0 60px rgba(232, 183, 49, 0.15);
 }
-.glow-purple {
+@utility glow-amber {
   box-shadow:
-    0 0 20px rgba(176, 38, 255, 0.35),
-    0 0 60px rgba(176, 38, 255, 0.15);
+    0 0 20px rgba(221, 200, 98, 0.35),
+    0 0 60px rgba(221, 200, 98, 0.15);
 }
-.glow-pink {
+@utility glow-yellow {
   box-shadow:
-    0 0 20px rgba(255, 46, 147, 0.35),
-    0 0 60px rgba(255, 46, 147, 0.15);
+    0 0 20px rgba(241, 228, 19, 0.35),
+    0 0 60px rgba(241, 228, 19, 0.15);
 }
-.text-glow-green {
-  text-shadow: 0 0 24px rgba(57, 255, 136, 0.6);
+@utility glow-champagne {
+  box-shadow:
+    0 0 20px rgba(217, 200, 140, 0.35),
+    0 0 60px rgba(217, 200, 140, 0.15);
+}
+@utility text-glow-gold {
+  text-shadow: 0 0 24px rgba(232, 183, 49, 0.6);
 }
 
 /* --- Orbit carousel --- */
@@ -105,28 +115,21 @@ body {
   animation: marquee-scroll 28s linear infinite;
 }
 
-/* --- Text mask gradient "video" fill --- */
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+/* --- Text mask gradient "video" fill ---
+   Base state renders a static gradient; TextMask.tsx drives a single
+   GSAP background-position sweep the first time the section scrolls
+   into view (see Phase 7 — no infinite loop right after the pinned
+   tabs section). */
 .text-mask-fill {
   background: linear-gradient(
     120deg,
-    var(--color-green),
-    var(--color-purple),
-    var(--color-pink),
-    var(--color-green)
+    var(--color-gold),
+    var(--color-yellow),
+    var(--color-amber),
+    var(--color-gold)
   );
   background-size: 300% 300%;
-  animation: gradient-shift 8s ease infinite;
+  background-position: 0% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -166,8 +169,7 @@ body {
   }
   .orbit-spin,
   .orbit-counter,
-  .marquee-track,
-  .text-mask-fill {
+  .marquee-track {
     animation: none;
   }
 }

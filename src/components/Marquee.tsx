@@ -1,13 +1,27 @@
-const ITEMS = [
-  { label: "AI DEV", border: "border-green/50", text: "text-green" },
-  { label: "SPORTS", border: "border-purple/50", text: "text-purple" },
-  { label: "STAR WARS", border: "border-pink/50", text: "text-pink" },
-  { label: "MARVEL", border: "border-green/50", text: "text-green" },
-  { label: "ASOIAF", border: "border-purple/50", text: "text-purple" },
-  { label: "ANALYTICS", border: "border-pink/50", text: "text-pink" },
-  { label: "YOUTUBE", border: "border-green/50", text: "text-green" },
-  { label: "CODING", border: "border-purple/50", text: "text-purple" },
+// Tailwind's scanner needs literal class strings, so the accent cycle is
+// spelled out per-tone here rather than built with a template literal.
+const TONES = [
+  { border: "border-gold/50", text: "text-gold" },
+  { border: "border-amber/50", text: "text-amber" },
+  { border: "border-yellow/50", text: "text-yellow" },
+  { border: "border-champagne/50", text: "text-champagne" },
+] as const;
+
+const LABELS = [
+  "AI DEV",
+  "SPORTS",
+  "STAR WARS",
+  "MARVEL",
+  "ASOIAF",
+  "ANALYTICS",
+  "YOUTUBE",
+  "CODING",
 ];
+
+const ITEMS = LABELS.map((label, i) => ({
+  label,
+  ...TONES[i % TONES.length],
+}));
 
 export default function Marquee() {
   const loop = [...ITEMS, ...ITEMS];

@@ -10,14 +10,14 @@ const CARDS: ValueCard[] = [
   {
     heading: "I Build.",
     body: "AI-powered web products — from idea to shipped product, using modern React and LLM-assisted workflows to move fast without cutting corners.",
-    bg: "bg-green",
+    bg: "bg-gold",
     text: "text-void",
     ringColor: "border-void/20",
   },
   {
     heading: "I Analyze.",
     body: "Sports performance data and entertainment lore, turned into breakdowns people actually want to watch or read — signal over noise, every time.",
-    bg: "bg-[#c9a6ff]",
+    bg: "bg-champagne",
     text: "text-void",
     ringColor: "border-void/20",
   },

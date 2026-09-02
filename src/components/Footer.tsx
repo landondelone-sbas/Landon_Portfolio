@@ -1,3 +1,5 @@
+import MagneticLink from "./MagneticLink";
+
 export default function Footer() {
   return (
     <footer className="relative">
@@ -8,7 +10,7 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
             <div>
               <p className="font-signature text-2xl text-ink">
-                Landon<span className="text-green">.</span>
+                Landon<span className="text-gold">.</span>
               </p>
               <p className="mt-1 font-body text-sm text-mute">
                 AI Dev · Sports Analytics · Media Breakdowns
@@ -19,24 +21,24 @@ export default function Footer() {
               className="flex flex-wrap items-center justify-center gap-6"
               aria-label="Footer"
             >
-              <a
+              <MagneticLink
                 href="#showcase"
-                className="font-display text-sm font-medium uppercase tracking-widest text-mute hover:text-green"
+                className="font-display text-sm font-medium uppercase tracking-widest text-mute hover:text-gold"
               >
                 Showcase
-              </a>
-              <a
+              </MagneticLink>
+              <MagneticLink
                 href="#about"
-                className="font-display text-sm font-medium uppercase tracking-widest text-mute hover:text-purple"
+                className="font-display text-sm font-medium uppercase tracking-widest text-mute hover:text-amber"
               >
                 About
-              </a>
-              <a
+              </MagneticLink>
+              <MagneticLink
                 href="#contact"
-                className="glow-green rounded-full bg-green px-5 py-2 font-display text-sm font-semibold uppercase tracking-widest text-void transition-transform hover:scale-105"
+                className="glow-gold rounded-full bg-gold px-5 py-2 font-display text-sm font-semibold uppercase tracking-widest text-void transition-transform hover:scale-105"
               >
                 Let's Talk
-              </a>
+              </MagneticLink>
             </nav>
           </div>
 

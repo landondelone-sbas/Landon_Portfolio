@@ -28,15 +28,17 @@ export default function Contact() {
     <section id="contact" className="px-4 py-16 sm:px-6">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
         <div>
-          <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-pink">
+          <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-yellow">
             Contact
           </p>
           <h2 className="font-heading text-4xl leading-tight text-ink sm:text-5xl">
             Let's Talk
           </h2>
           <p className="mt-4 max-w-prose text-pretty font-body text-lg leading-relaxed text-mute">
-            Have a project, a dataset, or a idea for a Lore breakdown? Send a
-            message and I'll get back to you.
+            Have a project, a dataset, or a idea for a Lore breakdown? I'm
+            open to freelance builds, collaborations, and the occasional
+            deep-dive breakdown request — send a message and I'll get back to
+            you.
           </p>
 
           <form onSubmit={handleSubmit} className="mt-8 max-w-lg space-y-5">
@@ -54,7 +56,7 @@ export default function Contact() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-xl border border-line bg-panel px-3 py-2 font-body text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-green"
+                className="w-full rounded-xl border border-line bg-panel px-3 py-2 font-body text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               />
             </div>
 
@@ -72,7 +74,7 @@ export default function Contact() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-xl border border-line bg-panel px-3 py-2 font-body text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-green"
+                className="w-full rounded-xl border border-line bg-panel px-3 py-2 font-body text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               />
             </div>
 
@@ -90,13 +92,13 @@ export default function Contact() {
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full rounded-xl border border-line bg-panel px-3 py-2 font-body text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-green"
+                className="w-full rounded-xl border border-line bg-panel px-3 py-2 font-body text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               />
             </div>
 
             <button
               type="submit"
-              className="glow-green rounded-full bg-green px-7 py-3.5 font-display text-sm font-bold uppercase tracking-widest text-void transition-transform hover:scale-105"
+              className="glow-gold rounded-full bg-gold px-7 py-3.5 font-display text-sm font-bold uppercase tracking-widest text-void transition-transform hover:scale-105"
             >
               Send Message
             </button>
@@ -104,17 +106,17 @@ export default function Contact() {
         </div>
 
         <div className="rounded-3xl border border-line bg-panel p-6">
-          <h3 className="font-display text-sm font-semibold uppercase tracking-widest text-purple">
+          <h3 className="font-display text-sm font-semibold uppercase tracking-widest text-amber">
             Direct
           </h3>
           <a
             href={`mailto:${EMAIL}`}
-            className="mt-2 inline-block break-all font-body text-lg text-ink underline decoration-2 underline-offset-2 hover:text-green"
+            className="mt-2 inline-block break-all font-body text-lg text-ink underline decoration-2 underline-offset-2 hover:text-gold"
           >
             {EMAIL}
           </a>
 
-          <h3 className="mt-8 font-display text-sm font-semibold uppercase tracking-widest text-purple">
+          <h3 className="mt-8 font-display text-sm font-semibold uppercase tracking-widest text-amber">
             Elsewhere
           </h3>
           <ul className="mt-2 space-y-2">
@@ -122,7 +124,7 @@ export default function Contact() {
               <li key={s.label}>
                 <a
                   href={s.href}
-                  className="inline-block font-body text-lg text-ink underline decoration-2 underline-offset-2 hover:text-green"
+                  className="inline-block font-body text-lg text-ink underline decoration-2 underline-offset-2 hover:text-gold"
                 >
                   {s.label}
                 </a>

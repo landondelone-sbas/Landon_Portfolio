@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MagneticLink from "./MagneticLink";
 
 const LINKS = [
   { href: "#showcase", label: "Showcase" },
@@ -16,25 +17,25 @@ export default function Nav() {
           href="#top"
           className="font-signature text-2xl text-ink"
         >
-          Landon<span className="text-green">.</span>
+          Landon<span className="text-gold">.</span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
           {LINKS.map((link) => (
-            <a
+            <MagneticLink
               key={link.href}
               href={link.href}
-              className="font-display text-sm font-medium uppercase tracking-widest text-mute transition-colors hover:text-green"
+              className="font-display text-sm font-medium uppercase tracking-widest text-mute transition-colors hover:text-gold"
             >
               {link.label}
-            </a>
+            </MagneticLink>
           ))}
-          <a
+          <MagneticLink
             href="#contact"
-            className="glow-green rounded-full bg-green px-5 py-2 font-display text-sm font-semibold uppercase tracking-widest text-void transition-transform hover:scale-105"
+            className="glow-gold rounded-full bg-gold px-5 py-2 font-display text-sm font-semibold uppercase tracking-widest text-void transition-transform hover:scale-105"
           >
             Let's Talk
-          </a>
+          </MagneticLink>
         </nav>
 
         <button
@@ -67,7 +68,7 @@ export default function Nav() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="bg-green px-4 py-4 text-center font-display text-base font-semibold uppercase tracking-widest text-void"
+            className="bg-gold px-4 py-4 text-center font-display text-base font-semibold uppercase tracking-widest text-void"
           >
             Let's Talk
           </a>

@@ -2,36 +2,7 @@ import type { Project } from "../data/projects";
 import { categoryMeta } from "../data/projects";
 import { getYouTubeId, getYouTubeThumbnail } from "../lib/youtube";
 import { withBase } from "../lib/assets";
-
-const ACCENT: Record<
-  Project["category"],
-  { border: string; glow: string; text: string; badge: string }
-> = {
-  webdev: {
-    border: "border-green/40 hover:border-green",
-    glow: "hover:glow-green",
-    text: "text-green",
-    badge: "border-green/60 text-green",
-  },
-  sports: {
-    border: "border-purple/40 hover:border-purple",
-    glow: "hover:glow-purple",
-    text: "text-purple",
-    badge: "border-purple/60 text-purple",
-  },
-  entertainment: {
-    border: "border-pink/40 hover:border-pink",
-    glow: "hover:glow-pink",
-    text: "text-pink",
-    badge: "border-pink/60 text-pink",
-  },
-  logos: {
-    border: "border-green/40 hover:border-green",
-    glow: "hover:glow-green",
-    text: "text-green",
-    badge: "border-green/60 text-green",
-  },
-};
+import { categoryAccent } from "../lib/theme";
 
 interface Props {
   project: Project;
@@ -40,7 +11,7 @@ interface Props {
 
 export default function ProjectCard({ project, onOpen }: Props) {
   const meta = categoryMeta[project.category];
-  const accent = ACCENT[project.category];
+  const accent = categoryAccent[project.category];
   const youtubeId = project.url ? getYouTubeId(project.url) : null;
   const thumbnailSrc = youtubeId
     ? getYouTubeThumbnail(youtubeId)
@@ -99,7 +70,7 @@ export default function ProjectCard({ project, onOpen }: Props) {
               {project.format}
             </span>
             {project.builtByMe && (
-              <span className="rounded-full border border-green/60 bg-green/10 px-2 py-0.5 font-display text-xs font-bold uppercase tracking-widest text-green">
+              <span className="rounded-full border border-gold/60 bg-gold/10 px-2 py-0.5 font-display text-xs font-bold uppercase tracking-widest text-gold">
                 Built by Me
               </span>
             )}

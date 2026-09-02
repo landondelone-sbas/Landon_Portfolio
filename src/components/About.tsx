@@ -14,7 +14,7 @@ export default function About() {
     <section id="about" className="border-b border-line px-4 py-16 sm:px-6">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
         <div>
-          <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-pink">
+          <p className="mb-2 font-display text-sm font-semibold uppercase tracking-[0.3em] text-yellow">
             About
           </p>
           <h2 className="font-heading text-4xl leading-tight text-ink sm:text-5xl">
@@ -44,7 +44,7 @@ export default function About() {
           </div>
 
           <div className="mt-8">
-            <h3 className="mb-3 font-display text-sm font-semibold uppercase tracking-widest text-green">
+            <h3 className="mb-3 font-display text-sm font-semibold uppercase tracking-widest text-gold">
               Skills &amp; Tools
             </h3>
             <ul className="flex flex-wrap gap-2">

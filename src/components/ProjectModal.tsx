@@ -3,13 +3,7 @@ import type { Project } from "../data/projects";
 import { categoryMeta } from "../data/projects";
 import { getYouTubeEmbedUrl, getYouTubeId } from "../lib/youtube";
 import { withBase } from "../lib/assets";
-
-const ACCENT: Record<Project["category"], { badge: string; ring: string }> = {
-  webdev: { badge: "border-green/60 text-green", ring: "glow-green" },
-  sports: { badge: "border-purple/60 text-purple", ring: "glow-purple" },
-  entertainment: { badge: "border-pink/60 text-pink", ring: "glow-pink" },
-  logos: { badge: "border-green/60 text-green", ring: "glow-green" },
-};
+import { categoryAccent } from "../lib/theme";
 
 interface Props {
   project: Project;
@@ -59,7 +53,7 @@ export default function ProjectModal({ project, onClose }: Props) {
   }, [onClose]);
 
   const meta = categoryMeta[project.category];
-  const accent = ACCENT[project.category];
+  const accent = categoryAccent[project.category];
   const youtubeId = project.url ? getYouTubeId(project.url) : null;
 
   return (
@@ -73,7 +67,7 @@ export default function ProjectModal({ project, onClose }: Props) {
         aria-modal="true"
         aria-labelledby="modal-title"
         onClick={(e) => e.stopPropagation()}
-        className={`max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-line bg-panel ${accent.ring}`}
+        className={`max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-line bg-panel ${accent.glow.replace("hover:", "")}`}
       >
         <div className="flex items-center justify-between border-b border-line px-6 py-4">
           <span
@@ -86,7 +80,7 @@ export default function ProjectModal({ project, onClose }: Props) {
             type="button"
             onClick={onClose}
             aria-label="Close dialog"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-pink hover:text-pink"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-yellow hover:text-yellow"
           >
             ✕
           </button>
@@ -129,7 +123,7 @@ export default function ProjectModal({ project, onClose }: Props) {
           )}
 
           {project.builtByMe && (
-            <p className="mt-4 font-display text-xs font-bold uppercase tracking-widest text-green">
+            <p className="mt-4 font-display text-xs font-bold uppercase tracking-widest text-gold">
               Built by Me — Solo Project
             </p>
           )}
@@ -154,7 +148,7 @@ export default function ProjectModal({ project, onClose }: Props) {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`mt-6 inline-block font-display text-sm font-semibold uppercase tracking-widest ${accent.badge.split(" ")[1]}`}
+              className={`mt-6 inline-block font-display text-sm font-semibold uppercase tracking-widest ${accent.text}`}
             >
               {youtubeId ? "Watch on YouTube ↗" : "View Live Project ↗"}
             </a>
